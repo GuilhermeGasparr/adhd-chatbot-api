@@ -1,0 +1,26 @@
+{
+  "name": "adhd-chatbot-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuilhermeGasparr/adhd-chatbot-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuilhermeGasparr/adhd-chatbot-api/issues"
+  },
+  "homepage": "https://github.com/GuilhermeGasparr/adhd-chatbot-api#readme",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "xlsx": "^0.18.5"
+  }
+}
