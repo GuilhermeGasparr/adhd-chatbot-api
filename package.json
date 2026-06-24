@@ -18,9 +18,12 @@
   "homepage": "https://github.com/GuilhermeGasparr/adhd-chatbot-api#readme",
   "description": "",
   "dependencies": {
+    "@xenova/transformers": "^2.17.2",
+    "compute-cosine-similarity": "^1.1.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "openai": "^6.44.0",
     "xlsx": "^0.18.5"
   }
 }
