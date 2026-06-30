@@ -1,28 +1,38 @@
+require("dotenv").config();
+
 const express = require("express");
+const { answerQuestion } = require("./services/chatbotService");
 
 const app = express();
-const knowledge = require("./knowledge.json");
 
 app.use(express.json());
+app.post("/chat", async (req, res) => {
+  try {
+    const { message } = req.body;
+    const answer = await answerQuestion(message);
 
-app.post("/chat", (req, res) => {
-  const { message } = req.body;
+    if (!message || message.trim() === "") {
+      return res.status(400).json({
+        success: false,
+        message: "A mensagem é obrigatória.",
+      });
+    }
+    res.json({
+      success: true,
+      answer,
+    });
+  } catch (error) {
+    console.error(error);
 
-  const resultado = knowledge.find((item) =>
-    item.Pergunta?.toLowerCase().includes(message.toLowerCase()),
-  );
-
-  if (resultado) {
-    return res.json({
-      response: resultado.Resposta,
+    res.status(500).json({
+      success: false,
+      message: "Erro ao processar pergunta",
     });
   }
-
-  res.json({
-    response: "Não encontrei.",
-  });
 });
 
-app.listen(3000, () => {
-  console.log("Servidor rodando");
+const PORT = 3000;
+
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
