@@ -10,6 +10,6 @@ node_modules/
 # Sistema
 .DS_Store
 Thumbs.db
-
+sheets.xlsx
 # IDE
 .vscode/settings.json

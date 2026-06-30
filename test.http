@@ -2,5 +2,5 @@ POST http://localhost:3000/chat
 Content-Type: application/json
 
 {
-    "message": "Quais são os sintomas de desatenção?"
+    "message": "Como posso melhorar o comportamento da criança na escola?"
 }
