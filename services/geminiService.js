@@ -5,9 +5,9 @@ const ai = new GoogleGenAI({
 });
 
 async function generateAnswer(prompt) {
-
+    console.log("API Key:", process.env.GEMINI_API_KEY?.slice(0, 12));
     const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash-lite",
+        model: "gemini-2.5-flash",
         contents: prompt
     });
 
